@@ -1,0 +1,96 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    position: absolute;
+    width: 1064px;
+    height: 644px;
+    top: 254px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;  
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.loginLeft {
+    width: 50%;
+}
+
+.loginRight {
+    width: 50%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iplogin{
+    width: 350px;
+    height: 48px;
+    left: 799px;
+    top: 428px;
+
+    border: 2px solid #FC7555;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.015em;
+
+    color: #858585;
+}
+
+.btlogin {
+    width: 350px;
+    height: 48px;
+    left: 799px;
+    top: 428px;
+
+    background: #FC7555;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 960px){
+    .login{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        background: none;
+        box-shadow: none;
+        border-radius: none;
+    }
+    .loginLeft{
+        display: none;
+    }
+    .loginRight {
+        width: 100%;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        border-radius: none;
+        position: absolute;
+    }
+    .btlogin {
+        width: 100px;
+        height: 48px;
+
+        background: #FC7555;
+        border-radius: 6px;
+    }
+}
+
