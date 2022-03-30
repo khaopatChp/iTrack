@@ -135,7 +135,8 @@ Link {
         transition: 250ms;
     }
 
-    Button {
+    .bt-sign-in {
+        text-decoration: none;
         display: none;
     }
 }

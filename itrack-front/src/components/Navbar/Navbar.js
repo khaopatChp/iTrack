@@ -28,7 +28,7 @@ function Navbar() {
                     )
                 })}
             </ul>
-            <Button><Link to="/register">Sign up</Link></Button>
+            <Link className="bt-sign-in" to="/register"><Button>Sign up</Button></Link>
         </nav>
     );
 }

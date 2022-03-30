@@ -1,0 +1,57 @@
+.Home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /*background-image: url('./bg_big.png');
+    background-size: cover;*/
+     /* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
+
+}
+
+.home_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home_header {
+    color: #fff;
+    margin-bottom: 5%;
+}
+
+.home_bt {
+    background-color: #3acbf7;
+    
+    padding: 8px 20px;
+    border: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.home_bt:hover  {
+    padding: 8px 20px;
+    transition: all 0.3s ease-out;
+    background: #fff;
+    color: #6568f4;
+    transition: 25ms;
+
+}

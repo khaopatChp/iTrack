@@ -1,27 +1,31 @@
-.body {
+.in{
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.login {
-    position: absolute;
-    width: 1064px;
-    height: 644px;
-    top: 254px;
+    border-radius: 16px; 
     
-    background: #FFFFFF;
-    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;  
-
+}
+.lo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     
-}
 
+    background: #fff;
+    width: 1064px;
+    height: auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border-radius: 16px; 
+}
+.login_img {
+    border-radius: 16px;
+}
+p {
+    margin-bottom: 5%;
+}
 .loginLeft {
     width: 50%;
+    border-radius: 16px;
 }
 
 .loginRight {
@@ -42,7 +46,7 @@
     left: 799px;
     top: 428px;
 
-    border: 2px solid #FC7555;
+    border: 2px solid #6568f4;
     box-sizing: border-box;
     border-radius: 6px;
 
@@ -60,7 +64,7 @@
     left: 799px;
     top: 428px;
 
-    background: #FC7555;
+    background: #6568f4;
     border-radius: 6px;
 }
 
@@ -84,13 +88,15 @@
         box-shadow: none;
         border-radius: none;
         position: absolute;
+        top: 15%;
     }
     .btlogin {
         width: 100px;
         height: 48px;
 
-        background: #FC7555;
+        background: #6568f4;
         border-radius: 6px;
+        color: #fff;
     }
 }
 

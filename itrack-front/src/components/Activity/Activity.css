@@ -1,3 +1,23 @@
-@media screen and (max-width: 960px){
-    
+.Activity {
+    border: 1px solid hsl(216, 8%, 88%);
+    border-radius: 4px;
+    width: 576px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 15px;
 }
+  
+  .Activity__image {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .Activity__delete {
+    border: none;
+    background: none;
+  
+    padding: 0;
+    float: right;
+  
+    cursor: pointer;
+  }

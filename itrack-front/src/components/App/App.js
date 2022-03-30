@@ -18,6 +18,7 @@ import Login from '../Login/Login'
 let id = 1;
 function App() {
   const [posts, setPosts] = useState([]);
+  
 
   function addPost(newPost) {
     setPosts([{ id, title: newPost }, ...posts]);
@@ -38,6 +39,15 @@ function App() {
               <Route exact path='/' element={<Home/>}/>
               <Route exact path='/register' element={<Register/>}/>
               <Route exact path='/activity' element={<Activity/>}/>
+              {posts.map((post) => (
+                  <Activity
+                    key={post.id}
+                    id={post.id}
+                    title={post.title}
+                    removePost={removePost}
+                  />
+                ))}
+              
               <Route exact path='/add-activity' element={<AddActivity addPost={addPost}/>}/>
               <Route exact path='/login' element={<Login/>}/>
           </Routes>
