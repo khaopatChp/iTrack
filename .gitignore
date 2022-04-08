@@ -1,0 +1,5 @@
+node_modules
+
+./itrack-back/node_modules
+./itrack-back/src/config.js
+

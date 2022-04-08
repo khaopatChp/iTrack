@@ -1,23 +1,102 @@
-.Activity {
-    border: 1px solid hsl(216, 8%, 88%);
-    border-radius: 4px;
-    width: 576px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    padding: 15px;
+
+.card-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 32px;
+  column-gap: 32px;
+  margin: 5%;
 }
-  
-  .Activity__image {
-    width: 100%;
-    margin-top: 15px;
-  }
-  
-  .Activity__delete {
-    border: none;
-    background: none;
-  
-    padding: 0;
-    float: right;
-  
-    cursor: pointer;
-  }
+.card-main{
+  padding: 0px;
+  max-width: 253px;
+  height: 386px;
+  flex: 1;
+
+  background: #FFFFFF;
+  box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.15);
+
+  display: inline-flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 5px;
+
+  position: static;
+  width: 253px;
+  height: max-content;
+  left: 0px;
+  top: 160px;
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px;
+}
+
+.card-name {
+  height: 130px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title h1 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 5px;
+}
+
+.card-name p {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.card-name h5 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  margin-bottom: 5px;
+
+  color: #1664A4;
+}
+
+.card-foot {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 253px;
+  height: 40px;
+
+  background:  rgba(73,63,252,1);
+}
+
+.card-foot h1 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.card-foot i {
+  color: #FFFFFF;
+}

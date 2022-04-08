@@ -6,17 +6,25 @@ import { useNavigate } from 'react-router-dom';
 
 
 function AddActivity({addPost}) {
-  const [input, setInput] = useState('');
+  const [inputName, setInputName] = useState('');
+  const [inputDescription, setInputDescription] = useState('');
+  const [inputType, setInputType] = useState('');
+  const [inputDate, setInputDate] = useState('');
+  const [inputDuration, setInputDuration] = useState('');
+  
   const navigate = useNavigate();
 
-  function onChange(e) {
-      setInput(e.target.value);
-  }
-
-  function onSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
+    let records = {
+      activityName: inputName,
+      timestamp: inputDate,
+      duration: inputDuration,
+      calories: 0,
+      description: inputDescription,
+    }
     axios
-    .get(`https://jsonplaceholder.typicode.com/users`)
+    .post(`http://localhost:4000/users/me/records/` ,records)
     .then((res) => {
       console.log("data: ", res.data);
       navigate({
@@ -34,23 +42,23 @@ function AddActivity({addPost}) {
         <div className="title">
           <h1>Let's create your activity!</h1>
         </div>
-        <form onSubmit={onSubmit}>
-            <div class="inputbox">
+        <form onSubmit={handleSubmit}>
+            <div className="inputbox">
               <input 
                 className='input InputName' 
                 id="name" 
                 type="text" 
-                onChange={onChange} 
+                onChange={e => setInputName(e.target.value)}
                 required="required"
               />
               <span>Name</span>
             </div>
-            <div class="inputbox">
-              <select id="cars" name="cars" required="required">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="audi">Audi</option>
+            <div className="inputbox" onChange={e => setInputType(e.target.value)}>
+              <select id="type" name="type" required="required">
+                        <option value="water">water sport</option>
+                        <option value="indoor">indoor</option>
+                        <option value="outdoor">outdoor</option>
+                        <option value="gym">Audi</option>
               </select>
             </div>
             <div className='inputbox'>
@@ -59,22 +67,31 @@ function AddActivity({addPost}) {
                   id="des" 
                   name="des"
                   required="required" 
+                  onChange={e => setInputDescription(e.target.value)}
                 />
                 <span>Description</span>
             </div>
-            <div class="inputbox">
-                <input type="date" id="start"  min="2018-01-01" max="2030-12-31" required="required"/>
-            </div>
-            <div class="inputbox">
+            <div className="inputbox">
                 <input 
-                  id="distance" 
-                  type="number" 
-                  name="distance" 
+                  type="date" 
+                  id="start"  
+                  min="2018-01-01" 
+                  max="2030-12-31" 
                   required="required"
+                  onChange={e => setInputDate(e.target.value)}
+                  />
+            </div>
+            <div className="inputbox">
+                <input 
+                  id="duration" 
+                  type="number" 
+                  name="duration" 
+                  required="required"
+                  onChange={e => setInputDuration(e.target.value)}
                 />
                 <span>Distance</span>
             </div>
-              <button className="SubmitButton">SUBMIT</button>
+              <button className="SubmitButton" onClick={handleSubmit}>SUBMIT</button>
           </form>
         </div>
     </div>
