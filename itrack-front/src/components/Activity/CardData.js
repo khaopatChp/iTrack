@@ -1,31 +1,17 @@
-import axios from "axios";
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-function HandleRemove ({res, index}) {
-    const navigate = useNavigate();
-    const Removed = (e) => {
-        e.preventDefault();
-        window.location.reload();
-        axios
-        .delete(`http://localhost:4000/users/me/records/${res._id}`)
-        .then((res) => {
-        navigate({
-            pathname: "/activity"
-        });
-    })
-    }
-
+function HandleRemove ({res,remove}) {
     return (
-        <div className="card-main" key={res._id}>
+        <div className="card-main">
               <div className="card-element" >
-                <button onClick={Removed}>X</button>
                 <div className="card-img">
                   <img src='./act_1.avif' width="100%"/>
+                  <i className="fa-solid fa-xmark icon" onClick={remove}></i>
                 </div>
+                
                 <div className='card-title' >
                   <div className='card-name'>
-                    <h5>{res.timestamp}</h5>
+                    <h5>{res.timestamp.slice(8,10)+"/"+res.timestamp.slice(5,7)+"/"+res.timestamp.slice(0,4)}</h5>
                     <h1>{res.activityName}</h1>
                     <p>{res.description}</p>
                   </div>

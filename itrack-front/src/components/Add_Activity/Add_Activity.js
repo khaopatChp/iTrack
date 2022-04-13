@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
-function AddActivity({addPost}) {
+function AddActivity() {
   const [inputName, setInputName] = useState('');
   const [inputDescription, setInputDescription] = useState('');
   const [inputType, setInputType] = useState('');
