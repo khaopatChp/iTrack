@@ -3,23 +3,6 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    /*background-image: url('./bg_big.png');
-    background-size: cover;*/
-     /* ff 3.6+ */
-    background:-moz-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
-
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
-
-    /* opera 11.10+ */
-    background:-o-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
-
-    /* ie 10+ */
-    background:-ms-radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
-
-    /* global 92%+ browsers support */
-    background:radial-gradient(circle at 97% 89%, rgba(66, 115, 118, 1) 2%, rgba(46, 49, 68, 1) 21%, rgba(46, 49, 68, 1) 42%, rgba(46, 67, 68, 1) 77%, rgba(27, 93, 250, 1) 100%);
-
 }
 
 .home_item {
@@ -29,7 +12,7 @@
 }
 
 .home_header {
-    color: #fff;
+    color: black;
     margin-bottom: 5%;
 }
 

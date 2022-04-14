@@ -35,9 +35,7 @@
     font-weight: 600;
     margin-top: 10px;
 }
-.center input {
-    margin-bottom: 5%;
-}
+
 .center .inputbox {
     position: relative;
     width: 350px;
@@ -115,6 +113,10 @@
     background: #fff;
     color: #6568f4;
     transition: 25ms;
+}
+
+.errors {
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 960px){

@@ -10,9 +10,13 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-file-base64": "^1.0.3",
     "react-native-material-dropdown": "^0.11.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-simple-timefield": "^3.2.5",
+    "react-time-duration-input": "^1.1.1",
+    "react-time-picker": "^4.5.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

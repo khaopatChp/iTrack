@@ -21,7 +21,7 @@ export const MenuItems = [
     },
     {
         title : 'Sign up',
-        url: '/signup',
+        url: '/register',
         cName: 'nav-link-mobile'
     }
 ]
