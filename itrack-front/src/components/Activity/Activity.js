@@ -8,7 +8,7 @@ function Activity() {
 
   async function FetchData() {
     await axios
-      .get(`http://localhost:4000/users/me/records/`)
+      .get(`https://i-track-back.vercel.app/users/me/records/`)
       .then((res) => { 
         setCardItems(res.data);
         console.log(res.data);
@@ -24,7 +24,7 @@ function Activity() {
 
   const Removed = (id) => {
     axios
-    .delete(`http://localhost:4000/users/me/records/${id}`)
+    .delete(`https://i-track-back.vercel.app/users/me/records/${id}`)
     .then(() => {
     FetchData();
 })

@@ -35,7 +35,7 @@ function AddActivity() {
 
     if (isValid) {
       axios
-        .post(`http://localhost:4000/users/me/records/`, records)
+        .post(`https://i-track-back.vercel.app/users/me/records/`, records)
         .then((res) => {
           console.log("data: ", res.data);
           navigate({
