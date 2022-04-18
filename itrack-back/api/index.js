@@ -1,0 +1,28 @@
+// api/index.js
+
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoose = require('mongoose');
+
+const PORT = process.env.PORT || 4001;
+const config = require('../src/config');
+
+const userRouter = require('../src/routes/user');
+
+const app = express();
+
+// Body parser to parse json in request body for us
+app.use(bodyParser.json());
+// CORS
+app.use(
+  cors({
+    origin: '*',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  })
+);
+
+// Our routers
+app.use('/users', userRouter);
+
+module.exports = app;
