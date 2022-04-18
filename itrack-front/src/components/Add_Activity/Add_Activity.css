@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 100vh;
+    height: auto;
 }
 .Add_Activity_left {
     width: 50%;

@@ -7,16 +7,16 @@ function HandleRemove ({res,remove}) {
       iconType = <i className="fa-solid fa-person-running"></i>;
     }
     if (res.typeOfActivity === 'water'){
-      iconType = <i class="fa-solid fa-person-swimming"></i>;
+      iconType = <i className="fa-solid fa-person-swimming"></i>;
     }
     if (res.typeOfActivity === 'yoga'){
-      iconType = <i class="fa-solid fa-hands-praying"></i>;
+      iconType = <i className="fa-solid fa-hands-praying"></i>;
     }
     if (res.typeOfActivity === 'fitness'){
-      iconType = <i class="fa-solid fa-dumbbell"></i>;
+      iconType = <i className="fa-solid fa-dumbbell"></i>;
     }
     if (res.typeOfActivity === 'accessories'){
-      iconType = <i class="fa-solid fa-volleyball"></i>;
+      iconType = <i className="fa-solid fa-volleyball"></i>;
     }
 
     return (

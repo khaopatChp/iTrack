@@ -10,9 +10,11 @@ router.use('/:recordId', async (req, res, next) => {
     return res.status(404).send('Record not found');
   }
   const foundRecord = await RecordModel.findById(recordId);
+  console.log(foundRecord)
   if (!foundRecord) {
     return res.status(404).send('Record not found');
   }
+  req.foundRecord = foundRecord;
   next();
 });
 
@@ -42,8 +44,24 @@ router.post('/', async (req, res, next) => {
   return res.status(201).send(newRecord);
 });
 
-router.put('/:recordId', (req, res, next) => {
-  return res.status(501).send('Not implemented');
+router.put('/:recordId', async  (req, res, next) => {
+  const body = req.body;
+  console.log(body)
+  console.log(req.foundRecord)
+
+  const newRecord = new RecordModel(body);
+
+  const errors = newRecord.validateSync();
+  if (errors) {
+    const errorFieldNames = Object.keys(errors.errors);
+    if (errorFieldNames.length > 0) {
+      return res.status(400).send(errors.errors[errorFieldNames[0]].message);
+    }
+  }
+
+  await newRecord.save();
+  return res.status(201).send(newRecord);
+
 });
 
 router.delete('/:recordId', async (req, res, next) => {
