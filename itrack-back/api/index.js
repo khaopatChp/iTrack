@@ -12,6 +12,13 @@ const userRouter = require('../src/routes/user');
 
 const app = express();
 
+if (config.isVercel) {
+  app.use(async (req, res, next) => {
+    await mongoose.connect(config.mongoUri, config.mongoOptions);
+    return next();
+  });
+}
+
 // Body parser to parse json in request body for us
 app.use(bodyParser.json());
 // CORS
