@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './Model.css'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const Model = ({ showModel, setShowModel, res, FetchData }) => {
     const [inputName, setInputName] = useState(res.activityName);
@@ -9,7 +8,6 @@ const Model = ({ showModel, setShowModel, res, FetchData }) => {
     const [inputType, setInputType] = useState(res.typeOfActivity);
     const [inputDate, setInputDate] = useState(res.date.slice(0, 10));
     const [inputDuration, setInputDuration] = useState(res.duration);
-    const [inputImg, setInputImg] = useState(res.img);
 
     const [nameErr, setNameErr] = useState({});
     const [descriptionErr, setDescriptionErr] = useState({});
@@ -19,6 +17,9 @@ const Model = ({ showModel, setShowModel, res, FetchData }) => {
 
 
     function handleSubmit(e) {
+
+       
+
         e.preventDefault();
         const isValid = formValidation();
         console.log(inputName)
@@ -28,7 +29,7 @@ const Model = ({ showModel, setShowModel, res, FetchData }) => {
             date: inputDate,
             description: inputDescription,
             duration: inputDuration,
-            img: inputImg,
+            
         }
         if (isValid) {
         axios
@@ -40,27 +41,27 @@ const Model = ({ showModel, setShowModel, res, FetchData }) => {
         }
     }
 
-    const uploadImage = async (e) => {
-        const file = e.target.files[0];
-        const base64 = await convertBase64(file);
-        console.log(base64);
-        setInputImg(base64)
-    }
+    // const uploadImage = async (e) => {
+    //     const file = e.target.files[0];
+    //     const base64 = await convertBase64(file);
+    //     console.log(base64);
+    //     setInputImg(base64)
+    // }
 
-    const convertBase64 = (file) => {
-        return new Promise((resolve, reject) => {
-            const fileReader = new FileReader();
-            fileReader.readAsDataURL(file);
+    // const convertBase64 = (file) => {
+    //     return new Promise((resolve, reject) => {
+    //         const fileReader = new FileReader();
+    //         fileReader.readAsDataURL(file);
 
-            fileReader.onload = () => {
-                resolve(fileReader.result);
-            }
+    //         fileReader.onload = () => {
+    //             resolve(fileReader.result);
+    //         }
 
-            fileReader.onerror = (error) => {
-                reject(error);
-            }
-        })
-    }
+    //         fileReader.onerror = (error) => {
+    //             reject(error);
+    //         }
+    //     })
+    // }
 
     const formValidation = () => {
         const nameErr = {};
@@ -211,15 +212,7 @@ const Model = ({ showModel, setShowModel, res, FetchData }) => {
                                             return <div style={{ color: "red" }}>{durationErr[key]}</div>
                                         })}
                                     </div>
-                                    <div className="inputbox">
-                                        <input
-                                            value={inputImg}
-                                            type="file"
-                                            onChange={(e) => {
-                                                uploadImage(e);
-                                            }}
-                                        />
-                                    </div>
+                                    
                                     <button className="SubmitButton" onClick={handleSubmit}>SUBMIT</button>
                                 </form>
                             </div>
