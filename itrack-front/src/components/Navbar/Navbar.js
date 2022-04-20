@@ -13,7 +13,7 @@ function Navbar() {
 
     return (
         <nav className="NavbarItems">
-            <h1 className="navbar-logo">iTrack<i className="fab fa-react"></i></h1>
+            <h1 className="navbar-logo">iTrack</h1>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={state ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>

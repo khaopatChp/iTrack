@@ -3,6 +3,23 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    
+
+     /* ff 3.6+ */
+     background:-moz-radial-gradient(circle at 100% 100%, rgba(150, 222, 255, 1) 8%, rgba(255, 255, 255, 1) 28%);
+
+     /* safari 5.1+,chrome 10+ */
+     background:-webkit-radial-gradient(circle at 100% 100%, rgba(150, 222, 255, 1) 8%, rgba(255, 255, 255, 1) 28%);
+ 
+     /* opera 11.10+ */
+     background:-o-radial-gradient(circle at 100% 100%, rgba(150, 222, 255, 1) 8%, rgba(255, 255, 255, 1) 28%);
+ 
+     /* ie 10+ */
+     background:-ms-radial-gradient(circle at 100% 100%, rgba(150, 222, 255, 1) 8%, rgba(255, 255, 255, 1) 28%);
+ 
+     /* global 92%+ browsers support */
+     background:radial-gradient(circle at 100% 100%, rgba(150, 222, 255, 1) 8%, rgba(255, 255, 255, 1) 28%);
+
 }
 
 .home_item {
