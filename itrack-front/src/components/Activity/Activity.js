@@ -49,12 +49,13 @@ function Activity() {
 })
 }
 
+
+
   return (
     <div className='card-center'>
-      
       <div className="card-row">
         {cardItems.map((res, index) => {
-          return <HandleRemove res={res} key={index} remove={() => {Removed(res._id)}}/>;
+          return <HandleRemove res={res} key={index} remove={() => {Removed(res._id)} } FetchData={FetchData} />;
         })}
       </div>
     </div>

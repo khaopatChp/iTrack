@@ -81,7 +81,7 @@ function AddActivity() {
       isValid = false;
     }
 
-    if (inputName.trim().length > 10) {
+    if (inputName.trim().length > 20) {
       nameErr.nameLong = "Name is too long";
       isValid = false;
     }

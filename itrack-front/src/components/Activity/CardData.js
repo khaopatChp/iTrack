@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Model from './Model';
 
-function HandleRemove ({res,remove}) {
+function HandleRemove ({res,remove,update,FetchData}) {
     let iconType;
+    const [showModel, setShowModel] = useState(false);
+
+    const openModel = () => {
+      setShowModel(prev => !prev)
+    }
 
     if (res.typeOfActivity === 'running'){
       iconType = <i className="fa-solid fa-person-running"></i>;
@@ -20,11 +26,16 @@ function HandleRemove ({res,remove}) {
     }
 
     return (
+      <>
+      <Model showModel={showModel} setShowModel = {setShowModel} update={update} id={res._id} res={res} FetchData={FetchData}/>
         <div className="card-main">
+          
               <div className="card-element" >
                 <div className="card-img">
                   <img src={res.img !== '' ? res.img : './act_1.avif'} width="100%"/>
                   <i className="fa-solid fa-xmark icon" onClick={remove}></i>
+                  <i class="fa-solid fa-pen edit " onClick={openModel}></i>
+                  
                 </div>
                 
                 <div className='card-title' >
@@ -43,6 +54,7 @@ function HandleRemove ({res,remove}) {
                 </div>
               </div>
             </div>
+      </>
     );
   }
 
