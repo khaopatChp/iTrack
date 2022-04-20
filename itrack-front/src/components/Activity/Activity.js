@@ -3,8 +3,10 @@ import './Activity.css';
 import axios from 'axios';
 import HandleRemove from './CardData';
 
+
 function Activity() {
   const [cardItems,setCardItems] = useState ([]);
+  const [num, setNum] = useState([]);
 
   async function FetchData() {
     await axios
@@ -17,10 +19,27 @@ function Activity() {
         Promise.reject(err);
       })
   }
-  useEffect(() => {
+
+  cardItems.map((res, index) => {
+    console.log(res.duration)
+  })
+
+ 
+  const calDuration = () => {
+    setNum([...cardItems.map((res, index) => {
+        return res.duration
+    })], cardItems.map((res, index) => {
+      return res.duration
+    }))
+  }
+
+    let  reduce  = num && num.reduce((prev,cur) => prev + cur,0)
     
+  useEffect(() => {
     FetchData();
+    calDuration();
   }, []);
+
 
   const Removed = (id) => {
     axios
@@ -32,6 +51,7 @@ function Activity() {
 
   return (
     <div className='card-center'>
+      <div>{reduce}</div>
       <div className="card-row">
         {cardItems.map((res, index) => {
           return <HandleRemove res={res} key={index} remove={() => {Removed(res._id)}}/>;

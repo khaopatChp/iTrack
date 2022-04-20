@@ -45,22 +45,30 @@ router.post('/', async (req, res, next) => {
 });
 
 router.put('/:recordId', async  (req, res, next) => {
-  const body = req.body;
-  console.log(body)
-  console.log(req.foundRecord)
+  const body = req.body ;
+  const index = req.params.recordId;
+  // find the request doc by it's id
+  const recordToBeUpdated = await RecordModel.findOne({_id : index})
 
-  const newRecord = new RecordModel(body);
-
-  const errors = newRecord.validateSync();
+  const errors = recordToBeUpdated.validateSync();
   if (errors) {
     const errorFieldNames = Object.keys(errors.errors);
     if (errorFieldNames.length > 0) {
       return res.status(400).send(errors.errors[errorFieldNames[0]].message);
     }
   }
+  
 
-  await newRecord.save();
-  return res.status(201).send(newRecord);
+  if(body.activityName) recordToBeUpdated.activityName = body.activityName
+  if(body.typeOfActivity) recordToBeUpdated.typeOfActivity = body.typeOfActivity
+  if(body.date) recordToBeUpdated.date = body.date
+  if(body.description) recordToBeUpdated.description = body.description
+  if(body.duration) recordToBeUpdated.duration = body.duration
+  if(body.img) recordToBeUpdated.img = body.img
+  
+  await recordToBeUpdated.save();
+  
+  return res.status(201).send(recordToBeUpdated);
 
 });
 
